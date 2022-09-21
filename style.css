@@ -1,0 +1,358 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  font-size: 62.5%;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  overflow: hidden;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* --------------------------------------------------------- */
+.background {
+  width: 100%;
+  height: 100vh;
+  background-image: url(img/bg.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: -1;
+}
+
+.slide_buttons .sbtn {
+  position: absolute;
+  top: 50%;
+  background-color: transparent;
+  transform: translateY(-50%);
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: 0.5rem solid white;
+  margin: 0 5rem;
+  z-index: 1000;
+}
+
+.slide_buttons .sbtn .sbtn_triangle {
+  background-color: transparent;
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 0.4rem solid white;
+  border-right: 0;
+  border-bottom: 0;
+  margin: 0 auto;
+  transition: all .3s;
+}
+
+.slide_buttons .sbtn .sbtn_triangle-left {
+  transform: rotate(-45deg) translate(0.3rem, 0.3rem);
+}
+
+.slide_buttons .sbtn .sbtn_triangle-right {
+  transform: rotate(135deg) translate(0.3rem, 0.3rem);
+}
+
+.slide_buttons .sbtn:hover {
+  border: 0.5rem solid rgba(0, 33, 60, 0.6);
+}
+
+.slide_buttons .sbtn:hover .sbtn_triangle {
+  border: 0.4rem solid rgba(0, 33, 60, 0.6);
+  border-bottom: 0 solid #000;
+  border-right: 0;
+}
+
+.slide_buttons .slide_button--left {
+  left: 0;
+}
+
+.slide_buttons .slide_button--right {
+  right: 0;
+}
+
+.filler__wrapper {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+.filler__wrapper .filler {
+  width: 10rem;
+  height: 80vh;
+  margin: 0 0;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(2rem);
+}
+
+.filler__wrapper .filler--left {
+  margin-right: 45rem;
+}
+
+.filler__wrapper .filler--right {
+  margin-left: 45rem;
+}
+
+.pagination {
+  position: absolute;
+  bottom: 4rem;
+  left: 50%;
+  z-index: 10;
+  display: flex;
+  transform: translate(-50%, -50%);
+}
+
+.pagination .pagination--item {
+  border: none;
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  font-family: "Bebas Neue", cursive;
+  margin: 0.5rem;
+}
+
+.pagination .pagination--item--active {
+  background-color: #505050;
+}
+
+.content, .content__second, .content__third, .content__fourth {
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 33, 60, 0.6);
+  width: 90rem;
+  height: 100vh;
+  margin: 0 auto;
+  z-index: 1;
+  transition: all 1s;
+  display: flex;
+  position: relative;
+}
+
+.wrapper {
+  padding: 10rem 10rem;
+  padding-bottom: 0;
+  width: 70rem;
+  transition: all 1s;
+  position: absolute;
+}
+
+.wrapper__second {
+  left: 100%;
+}
+
+.wrapper__third {
+  left: 200%;
+}
+
+.wrapper__fourth {
+  left: 300%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.wactive {
+  opacity: 0;
+}
+
+.active {
+  display: block;
+  opacity: 1;
+  transition: all 1s;
+}
+
+.content__title {
+  margin: 0 auto;
+  text-align: center;
+  line-height: 0.8;
+}
+
+.content__title .content__title-logo {
+  width: auto;
+  height: auto;
+  transform: scale(0.6);
+  margin: 0 auto;
+}
+
+.content__title .content__title-link {
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  text-decoration: none;
+  transition: all .3s;
+}
+
+.content__title .content__title-link:hover {
+  color: black;
+}
+
+.content__title-title {
+  font-family: "Bebas Neue", cursive;
+  font-size: 12rem;
+  font-weight: 500;
+  padding: 1rem;
+}
+
+.content__text {
+  text-align: center;
+  margin-top: 6rem;
+}
+
+.content__text .content__text-title {
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.content__text-text {
+  margin-top: 1rem;
+  font-size: 2rem;
+  line-height: 1.4;
+  font-weight: 300;
+  padding: 0 4rem;
+  text-align: center;
+}
+
+.content__socials {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.content__socials .content__socials-item {
+  margin: 1rem;
+  margin-top: 4rem;
+  transform: scale(0.8);
+  transition: all .5s;
+}
+
+.content__socials .content__socials-item:hover {
+  cursor: pointer;
+  transform: scale(1) rotate(360deg);
+}
+
+.content__text--second {
+  font-size: 3rem;
+  height: 7rem;
+}
+
+.content__text--second::before {
+  content: "";
+  background-color: #fff;
+  height: 0.5rem;
+  width: 50rem;
+  display: block;
+  margin: 3rem auto;
+  margin-top: 0rem;
+}
+
+.content__visit {
+  display: grid;
+  grid-template: 1fr 1fr/1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.content__visit .visit--item {
+  background-size: cover;
+  width: 100%;
+  height: auto;
+  align-items: center;
+  margin: 0 auto;
+  opacity: 0.5;
+  transition: all .5s;
+}
+
+.content__visit .visit--item:hover {
+  opacity: 1;
+  z-index: 100;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.content__more {
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 2rem;
+  height: 8rem;
+}
+
+.content__more .content__more--link {
+  text-decoration: none;
+}
+
+.content__more .content__more--link:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+.ywrapper {
+  margin-top: 2rem;
+}
+
+.youtube {
+  width: 100%;
+  height: 39.4rem;
+  margin: 0 auto;
+}
+
+.funny--cat {
+  margin: 2rem auto;
+}
