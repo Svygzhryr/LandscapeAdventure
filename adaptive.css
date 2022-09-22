@@ -76,8 +76,8 @@
     grid-template-columns: 1fr;
   }
   .content__visit .visit--item {
-    height: 20rem;
-    width: auto;
+    height: auto;
+    width: 80%;
   }
   .content__visit .visit--item:first-child, .content__visit .visit--item:last-child {
     display: none;
@@ -91,7 +91,7 @@
     height: auto;
   }
   .funny--cat {
-    width: 90%;
+    width: 70%;
     max-width: 40rem;
     height: auto;
   }
@@ -112,5 +112,18 @@
   .content__text-text {
     line-height: 1.4 !important;
     font-size: 1.5rem;
+  }
+}
+
+@media (max-height: 800px) {
+  .wrapper {
+    padding-top: 1rem;
+  }
+
+  .content__title-title {
+    font-size: 5rem;
+  }
+
+
   }
 }
